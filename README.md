@@ -1,4 +1,4 @@
-# Semester-Project-3
+# SP1 Exam Preparation
 
 #### How to run the project
 
