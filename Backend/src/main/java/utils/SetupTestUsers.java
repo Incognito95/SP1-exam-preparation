@@ -23,8 +23,8 @@ public class SetupTestUsers {
     // Whatever you do DO NOT COMMIT and PUSH with the real passwords
 
 
-    User user = new User("user", "1234");
-    User admin = new User("admin", "12345");
+    User user = new User(1, "user", "1234");
+    User admin = new User(2, "admin", "12345");
     Boat boat1 = new Boat(1, "Bertram", "Bertram", "Bertram", "");
     Owner owner1 = new Owner();
 

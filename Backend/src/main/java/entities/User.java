@@ -12,8 +12,13 @@ import org.mindrot.jbcrypt.BCrypt;
 @Table(name = "users")
 public class User implements Serializable {
 
-  private static final long serialVersionUID = 1L;
   @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Basic(optional = false)
+  @NotNull
+  @Column(name = "id")
+  private int id;
+
   @Basic(optional = false)
   @NotNull
   @Column(name = "user_name", length = 25)
@@ -53,13 +58,20 @@ public class User implements Serializable {
        return BCrypt.checkpw(userPass,this.userPass);
     }
    
-  public User(String userName, String userPass) {
+  public User(int id, String userName, String userPass) {
+    this.id = id;
     this.userName = userName;
     this.userSalt = BCrypt.gensalt(10);
     this.userPass = encrypt(userPass);
   }
 
+  public int getId() {
+    return id;
+  }
 
+  public void setId(int id) {
+    this.id = id;
+  }
 
   public String getUserName() {
     return userName;

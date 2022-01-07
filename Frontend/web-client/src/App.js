@@ -52,17 +52,17 @@ function App() {
                 (<div>
                     <Menu />
                     <Switch>
-                         <Route exact path="/menu-one">
-                         <MenuOne />
+                         <Route exact path="/">
+                         <Login />
                          </Route>
                          <Route exact path="/menu-two">
-                            <MenuTwo />
+                            {/*<MenuTwo />*/}
                          </Route>
                         <Route path="/login">
                                 <Login/>
                         </Route>
                         <Route exact path="/menu-three">
-                             <MenuThree />
+                             {/*<MenuThree />*/}
                         </Route>
                         <NoMatch />
                     </Switch>
