@@ -19,13 +19,13 @@ function Menu () {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     <li className="nav-item">
-                        <NavLink exact active className="active nav-link" to="/">Home</NavLink>
+                        <NavLink exact active className="active nav-link btn btn-primary text-white" to="/">Home</NavLink>
                     </li>
                     <li className="nav-item">
                         <NavLink exact active className="active nav-link" to="#"></NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink exact active className="active nav-link" to="/owners">Owners</NavLink>
+                        <NavLink exact active className="active nav-link btn btn-primary text-white" to="/allmovies">All Movies</NavLink>
                     </li>
                 </ul>
                 <form className="d-flex">

@@ -1,7 +1,10 @@
 package utils;
 
 
-import entities.*;
+import entities.Boat;
+import entities.Owner;
+import entities.Role;
+import entities.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -23,7 +26,6 @@ public class SetupTestUsers {
     User user = new User(1, "user", "1234");
     User admin = new User(2, "admin", "12345");
     Boat boat1 = new Boat(1, "Bertram", "Bertram", "Bertram", "");
-    Harbour harbour1 = new Harbour();
     Owner owner1 = new Owner();
 
 
@@ -36,7 +38,6 @@ public class SetupTestUsers {
     Role userRole = new Role("user");
     Role adminRole = new Role("admin");
     em.persist(boat1);
-    em.persist(harbour1);
     em.persist(owner1);
     user.addRole(userRole);
     admin.addRole(adminRole);

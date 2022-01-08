@@ -80,7 +80,7 @@ public class RenameMeResource {
     @Path("user")
     public List<User> ShowAllUsers() throws SQLException {
         EntityManager em = EMF.createEntityManager();
-        TypedQuery <User> query = em.createQuery("SELECT u from User u", entities.User.class);
+        TypedQuery <User> query = em.createQuery("SELECT o from User o", entities.User.class);
         List<User> result = query.getResultList();
         return result;
     }

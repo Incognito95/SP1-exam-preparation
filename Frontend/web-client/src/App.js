@@ -13,10 +13,8 @@ import {
 } from "react-router-dom";
 
 import Login from "./Components/Login";
-import Home from "./Components/Home";
 import Menu from "./Components/Menu";
 import NoMatch from "./Components/NoMatch";
-import Owners from "./Components/Owners";
 
 import React, { useState,useEffect } from "react";
 import facade from "./ApiFacade";
@@ -50,41 +48,25 @@ function App() {
 
     return (
         <div>
-            {!loggedIn ? (<Login login={login} />) : (
-                <div>
+            {!loggedIn ? (<Login login={login} />) :
+                (<div>
                     <Menu />
                     <Switch>
-                        <Route exact path="/">
-                            <Home />
-                        </Route>
+                         <Route exact path="/">
+                         <Login />
+                         </Route>
+                         <Route exact path="/menu-two">
+                            {/*<MenuTwo />*/}
+                         </Route>
                         <Route path="/login">
-                            <Login/>
+                                <Login/>
                         </Route>
-                        <Route path="/owners">
-                            <Owners />
+                        <Route exact path="/menu-three">
+                             {/*<MenuThree />*/}
                         </Route>
                         <NoMatch />
                     </Switch>
-                    <LoggedIn />
-                </div>
-            )}
-
-        </div>
-    )
-
-}
-
-
-function LoggedIn() {
-    const [dataFromServer, setDataFromServer] = useState("Loading...")
-
-    useEffect(() => {
-        facade.fetchData().then(data=> setDataFromServer(data.msg));
-    }, [])
-
-    return (
-        <div>
-
+                </div>)}
         </div>
     )
 
