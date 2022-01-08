@@ -1,38 +1,21 @@
-package entities;
+package dtos;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import java.io.Serializable;
+import entities.Harbour;
 
-@Entity
-@Table(name = "harbour")
-public class Harbour implements Serializable {
-
-    @Id
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "Id")
+public class HarbourDTO {
     private int id;
-
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "name")
     private String name;
-
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "address")
     private String address;
-
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "capacity")
     private int capacity;
 
-    public Harbour() {
+    public HarbourDTO(Harbour h) {
+        this.id = h.getId();
+        this.name = h.getName();
+        this.address = h.getAddress();
+        this.capacity = h.getCapacity();
     }
 
-    public Harbour(int id, String name, String address, int capacity) {
+    public HarbourDTO(int id, String name, String address, int capacity) {
         this.id = id;
         this.name = name;
         this.address = address;
