@@ -13,11 +13,15 @@ import {
 } from "react-router-dom";
 
 import Login from "./Components/Login";
-import Menu from "./Components/Menu";
-import NoMatch from "./Components/NoMatch";
 
 import React, { useState,useEffect } from "react";
 import facade from "./ApiFacade";
+import Menu from "./Components/Menu";
+import Home from "./Components/Home";
+import Owners from "./Components/Owners";
+import SpecificHarbour from "./Components/SpecificHarbour";
+
+import NoMatch from "./Components/NoMatch";
 
 
 
@@ -48,25 +52,23 @@ function App() {
 
     return (
         <div>
-            {!loggedIn ? (<Login login={login} />) :
-                (<div>
+            {/*{!loggedIn ? (<Login login={login} />) : (*/}
+                <div>
                     <Menu />
                     <Switch>
                          <Route exact path="/">
-                         <Login />
+                         <Home />
                          </Route>
-                         <Route exact path="/menu-two">
-                            {/*<MenuTwo />*/}
+                         <Route exact path="/owners">
+                            <Owners />
                          </Route>
-                        <Route path="/login">
-                                <Login/>
-                        </Route>
-                        <Route exact path="/menu-three">
-                             {/*<MenuThree />*/}
+                        <Route exact path="/specific-harbour">
+                            <SpecificHarbour />
                         </Route>
                         <NoMatch />
                     </Switch>
-                </div>)}
+                </div>
+            {/*)}*/}
         </div>
     )
 

@@ -22,11 +22,24 @@ public class SetupTestUsers {
     // Also, either delete this file, when users are created or rename and add to .gitignore
     // Whatever you do DO NOT COMMIT and PUSH with the real passwords
 
-
+    // user / admin
     User user = new User(1, "user", "1234");
     User admin = new User(2, "admin", "12345");
+
+    // boats
     Boat boat1 = new Boat(1, "Bertram", "Bertram", "Bertram", "");
-    Owner owner1 = new Owner();
+    Boat boat2 = new Boat(2, "Bertram", "Bertram", "Bertram", "");
+    Boat boat3 = new Boat(3, "Bertram", "Bertram", "Bertram", "");
+    Boat boat4 = new Boat(4, "Bertram", "Bertram", "Bertram", "");
+    Boat boat5 = new Boat(5, "Bertram", "Bertram", "Bertram", "");
+    Boat boat6 = new Boat(6, "Bertram", "Bertram", "Bertram", "");
+    Boat boat7 = new Boat(7, "Bertram", "Bertram", "Bertram", "");
+    Boat boat8 = new Boat(8, "Bertram", "Bertram", "Bertram", "");
+    Boat boat9 = new Boat(9, "Bertram", "Bertram", "Bertram", "");
+    Boat boat10 = new Boat(10, "Bertram", "Bertram", "Bertram", "");
+
+
+    Owner owner = new Owner();
 
 
 
@@ -37,8 +50,20 @@ public class SetupTestUsers {
     em.getTransaction().begin();
     Role userRole = new Role("user");
     Role adminRole = new Role("admin");
+
+    // boats
     em.persist(boat1);
-    em.persist(owner1);
+    em.persist(boat2);
+    em.persist(boat3);
+    em.persist(boat4);
+    em.persist(boat5);
+    em.persist(boat6);
+    em.persist(boat7);
+    em.persist(boat8);
+    em.persist(boat9);
+    em.persist(boat10);
+
+    em.persist(owner);
     user.addRole(userRole);
     admin.addRole(adminRole);
     em.persist(userRole);
