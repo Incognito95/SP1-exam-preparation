@@ -52,7 +52,7 @@ const SpecificHarbour = () => {
                             <td>{boat.brand}</td>
                             <td>{boat.make}</td>
                             <td>{boat.name}</td>
-                            <td>{boat.image}</td>
+                            <td><img src={`/images/${boat.image}`} width="70" /></td>
                         </tr>
                     ))
                 }
