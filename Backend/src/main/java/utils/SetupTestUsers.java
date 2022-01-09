@@ -60,14 +60,12 @@ public class SetupTestUsers {
     Harbour harbour10 = new Harbour(10, "Port of Shanghai", "Shanghai", 50);
 
 
-
+    // check if you can get username and password
     if (admin.getUserPass().equals("test")||user.getUserPass().equals("test"))
       throw new UnsupportedOperationException("You have not changed the passwords");
 
 
     em.getTransaction().begin();
-    Role userRole = new Role("user");
-    Role adminRole = new Role("admin");
 
     // boats
     em.persist(boat1);
@@ -105,13 +103,20 @@ public class SetupTestUsers {
     em.persist(harbour9);
     em.persist(harbour10);
 
+    // adding user / admin roles
+    Role userRole = new Role("user");
+    Role adminRole = new Role("admin");
     user.addRole(userRole);
     admin.addRole(adminRole);
     em.persist(userRole);
     em.persist(adminRole);
     em.persist(user);
     em.persist(admin);
+
+    // commit multiple transactions
     em.getTransaction().commit();
+
+    // print to console
     System.out.println("PW: " + user.getUserPass());
     System.out.println("Testing user with OK password: " + user.verifyPassword("test"));
     System.out.println("Testing user with wrong password: " + user.verifyPassword("test1"));

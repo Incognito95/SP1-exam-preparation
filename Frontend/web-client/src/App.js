@@ -53,7 +53,7 @@ function App() {
 
     return (
         <div>
-            {/*{!loggedIn ? (<Login login={login} />) : (*/}
+            {!loggedIn ? (<Login login={login} />) : (
                 <div>
                     <Menu />
                     <Switch>
@@ -72,7 +72,7 @@ function App() {
                         <NoMatch />
                     </Switch>
                 </div>
-            {/*)}*/}
+            )}
         </div>
     )
 
