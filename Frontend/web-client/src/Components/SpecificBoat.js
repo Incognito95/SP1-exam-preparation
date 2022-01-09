@@ -1,15 +1,7 @@
 import React, { useState, useEffect } from "react";
 import facade from "../ApiFacade";
 
-const SpecificHarbour = () => {
-    const [harbourList, setHarbourList] = useState([]);
-    useEffect(() => {
-        facade.fetchData("harbour")
-            .then(data => {
-                setHarbourList(data);
-            })
-    }, []);
-
+const SpecificBoat = () => {
     const [boatList, setbBoatList] = useState([]);
     useEffect(() => {
         facade.fetchData("boat")
@@ -18,19 +10,28 @@ const SpecificHarbour = () => {
             })
     }, []);
 
+    const [ownerList, setOwnerList] = useState([]);
+    useEffect(() => {
+        facade.fetchData("owner")
+            .then(data => {
+                setOwnerList(data);
+            })
+    }, []);
+
+
     const [query, setQuery] = useState("");
 
     return (
         <div className="container mt-5">
-            <h2>Boats Belonging On Specific Harbour</h2>
+            <h2>Owners Of Specific Boat</h2>
             <div class="btn-group float-end">
                 <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Select Harbour
+                    Select Boat
                 </button>
                 <ul className="dropdown-menu">
                     {
-                        harbourList.map((harbour, index) => (
-                            <li className="dropdown-item">{harbour.name}</li>
+                        boatList.map((boat, index) => (
+                            <li className="dropdown-item">{boat.name}</li>
                         ))
                     }
                 </ul>
@@ -46,13 +47,12 @@ const SpecificHarbour = () => {
                 </thead>
                 <tbody>
                 {
-                    boatList.map((boat, index) => (
+                    ownerList.map((owner, index) => (
                         <tr>
-                            <td>{boat.id}</td>
-                            <td>{boat.brand}</td>
-                            <td>{boat.make}</td>
-                            <td>{boat.name}</td>
-                            <td><img src={`/images/${boat.image}`} width="70" /></td>
+                            <td>{owner.id}</td>
+                            <td>{owner.name}</td>
+                            <td>{owner.address}</td>
+                            <td>{owner.phone}</td>
                         </tr>
                     ))
                 }
@@ -64,4 +64,4 @@ const SpecificHarbour = () => {
 
 
 
-export default SpecificHarbour;
+export default SpecificBoat;

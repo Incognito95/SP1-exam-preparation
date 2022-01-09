@@ -1,14 +1,16 @@
 /* ------ welcome page ---- */
-.welcome-header, .instructions-header, .list, .instructions-box {
+.welcome-header, .instructions-header, .list, .instructions-box, .list-group {
     margin-left: 20px;
 }
+
+.list-group {
+    width: 48.2%;
+}
+
+
 
 .instructions-list {
     line-height: 2.4em;
-}
-
-.btn-logout {
-    margin-left: 20px;
 }
 
 

@@ -20,6 +20,7 @@ import Menu from "./Components/Menu";
 import Home from "./Components/Home";
 import Owners from "./Components/Owners";
 import SpecificHarbour from "./Components/SpecificHarbour";
+import SpecificBoat from "./Components/SpecificBoat";
 
 import NoMatch from "./Components/NoMatch";
 
@@ -64,6 +65,9 @@ function App() {
                          </Route>
                         <Route exact path="/specific-harbour">
                             <SpecificHarbour />
+                        </Route>
+                        <Route exact path="/specific-boat">
+                            <SpecificBoat />
                         </Route>
                         <NoMatch />
                     </Switch>

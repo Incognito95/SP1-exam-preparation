@@ -28,12 +28,12 @@ public class SetupTestUsers {
     Boat boat2 = new Boat(2, "Boston Whaler", "Boston Whaler", "Montauk", "boston-whaler.jpeg");
     Boat boat3 = new Boat(3, "Chapparal", "Chapparal", "SSX", "chapparal.jpeg");
     Boat boat4 = new Boat(4, "Grady White", "Grady White", "The Canyon 336", "grady-white.jpeg");
-    Boat boat5 = new Boat(5, "Lund", "Lund", "Bertram", "lund.jpeg");
-    Boat boat6 = new Boat(6, "Masterchef", "Masterchef", "Bertram", "masterchef.jpeg");
-    Boat boat7 = new Boat(7, "Sea Ray", "Sea Ray", "Bertram", "sea-ray.jpeg");
-    Boat boat8 = new Boat(8, "Tracker", "Tracker", "Bertram", "tracker.jpeg");
-    Boat boat9 = new Boat(9, "Vking Yacths", "Vking Yacths", "Bertram", "viking-yachts.jpeg");
-    Boat boat10 = new Boat(10, "Yamaha", "Yamaha", "Bertram", "yamaha.jpeg");
+    Boat boat5 = new Boat(5, "Lund", "Lund", "PRO-V BASS XS", "lund.jpeg");
+    Boat boat6 = new Boat(6, "Masterchef", "Mastercraft", "NXT", "mastercraft.jpeg");
+    Boat boat7 = new Boat(7, "Sea Ray", "Sea Ray", "SUN SPORT 230", "sea-ray.jpeg");
+    Boat boat8 = new Boat(8, "Tracker", "Tracker", "DEEP V", "tracker.jpeg");
+    Boat boat9 = new Boat(9, "Vking Yacths", "Viking Yacths", "92EB", "viking-yachts.jpeg");
+    Boat boat10 = new Boat(10, "Yamaha", "Yamaha", "19 FT", "yamaha.jpeg");
 
     // owners
     Owner owner1 = new Owner(1, "Guinevere", "773 Judy Alley", 645746);
