@@ -12,6 +12,7 @@ import org.mindrot.jbcrypt.BCrypt;
 @Table(name = "users")
 public class User implements Serializable {
 
+  private static final long serialVersionUID = 1L;
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Basic(optional = false)
@@ -50,16 +51,15 @@ public class User implements Serializable {
     return rolesAsStrings;
   }
 
-  public User() {}
+  public User() {
+  }
 
-  
   //TODO Change when password is hashed
    public boolean verifyPassword(String userPass){
        return BCrypt.checkpw(userPass,this.userPass);
     }
    
-  public User(int id, String userName, String userPass) {
-    this.id = id;
+  public User(String userName, String userPass) {
     this.userName = userName;
     this.userSalt = BCrypt.gensalt(10);
     this.userPass = encrypt(userPass);

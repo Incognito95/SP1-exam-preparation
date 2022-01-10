@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import facade from "../ApiFacade";
+import {Helmet} from "react-helmet";
 
 const SpecificBoat = () => {
     const [boatList, setbBoatList] = useState([]);
@@ -24,8 +25,9 @@ const SpecificBoat = () => {
     return (
         <div className="container mt-5">
             <h2>Owners Of Specific Boat</h2>
-            <div class="btn-group float-end">
-                <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <div className="btn-group float-end">
+                <button className="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
                     Select Boat
                 </button>
                 <ul className="dropdown-menu">
@@ -36,7 +38,12 @@ const SpecificBoat = () => {
                     }
                 </ul>
             </div>
-            <table className="table mt-4">
+            {/* importing the js boat filter file, using Helmet which takes plain HTML tags and outputs plain HTML tags. */}
+            <Helmet>
+                <script src="../boat-filter.js" type="text/javascript" />
+            </Helmet>
+
+            <table className="table mt-4" id="boat-table">
                 <thead>
                 <tr>
                     <th>ID</th>

@@ -20,8 +20,9 @@ public class SetupTestUsers {
     // Whatever you do DO NOT COMMIT and PUSH with the real passwords
 
     // user / admin
-    User user = new User(1, "user", "1234");
-    User admin = new User(2, "admin", "12345");
+    User user = new User("user", "1234");
+    User admin = new User("admin", "12345");
+    User both = new User("user_admin", "1234");
 
     // boats
     Boat boat1 = new Boat(1, "Bertram", "Bertram", "Bertram 800", "bertram.jpeg");
@@ -61,7 +62,7 @@ public class SetupTestUsers {
 
 
     // check if you can get username and password
-    if (admin.getUserPass().equals("test")||user.getUserPass().equals("test"))
+    if(admin.getUserPass().equals("test")||user.getUserPass().equals("test")||both.getUserPass().equals("test"))
       throw new UnsupportedOperationException("You have not changed the passwords");
 
 
@@ -112,6 +113,7 @@ public class SetupTestUsers {
     em.persist(adminRole);
     em.persist(user);
     em.persist(admin);
+    em.persist(both);
 
     // commit multiple transactions
     em.getTransaction().commit();
